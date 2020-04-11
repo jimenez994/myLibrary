@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+* {
+  padding: 0;
+  margin: 0em;
+}
+
+.navGoldDark {
+  background-color: black;
+  height: 80px;
+  width: 100%;
+}
+
+.navGoldDark .logo {
+  font-family: "Great Vibes", cursive;
+  font-size: x-large;
+  color: #d1ad89;
+  margin-left: 20px;
+  line-height: 80px;
+}
+
+.navGoldDark .checkbtn {
+  font-size: 30px;
+  color: #d1ad89;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: block;
+}
+
+.navGoldDark #check {
+  display: none;
+}
+
+.navGoldDark ul {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #2c3e50;
+  top: 80px;
+  left: -100%;
+  text-align: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.navGoldDark ul li {
+  display: block;
+  margin: 50px 0;
+  line-height: 30px;
+}
+
+.navGoldDark ul li a {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.navGoldDark ul li a:hover,
+.navGoldDark ul li a.active {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-text-decoration-color: #d1ad89;
+          text-decoration-color: #d1ad89;
+}
+
+.navGoldDark #check:checked ~ ul {
+  left: 0;
+}
+
+.navGoldDark #check:checked ~ ul li a {
+  left: -100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .navGoldDark .checkbtn {
+    display: none;
+  }
+  .navGoldDark ul {
+    position: relative;
+    width: auto;
+    float: right;
+    margin-right: 40px;
+    left: 0;
+    height: auto;
+    background: none;
+    top: 0;
+  }
+  .navGoldDark ul li {
+    display: inline-block;
+    margin-right: 20px;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  .navGoldDark ul li a {
+    color: white;
+    font: 17px;
+    text-transform: capitalize;
+  }
+  .navGoldDark ul li a.active,
+  .navGoldDark ul li a:hover {
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    -webkit-text-decoration-color: #d1ad89;
+            text-decoration-color: #d1ad89;
+  }
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.navSky {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 8vh;
+  font-family: "Poppins", sans-serif;
+  background-color: #5d4954;
+}
+
+.navSky .logo {
+  color: #e2e2e2;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 24px;
+}
+
+.navSky .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 30%;
+}
+
+.navSky .nav-links a {
+  color: #e2e2e2;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.navSky .nav-links li {
+  list-style: none;
+}
+
+.navSky .burger {
+  display: none;
+}
+
+.navSky .burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #e2e2e2;
+  margin: 5px;
+}
+
+@media screen and (max-width: 1224px) {
+  .navSky .nav-links {
+    width: 42%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navSky .nav-links {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navSky .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #5d4954;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navSky .nav-links li {
+    opacity: 0;
+  }
+  .navSky .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+@-webkit-keyframes inRight {
+  0% {
+    width: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    width: 50%;
+  }
+}
+
+@keyframes inRight {
+  0% {
+    width: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    width: 50%;
+  }
+}
+
+@-webkit-keyframes outRight {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    width: 50%;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    width: 0%;
+  }
+}
+
+@keyframes outRight {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    width: 50%;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    width: 0%;
+  }
+}
+
+.navSky .nav-active {
+  -webkit-animation: inRight 0.5s forwards 0s ease-in;
+          animation: inRight 0.5s forwards 0s ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navSky .nav-inactive {
+  -webkit-animation: outRight 0.5s forwards 0s ease-out;
+          animation: outRight 0.5s forwards 0s ease-out;
+  display: none;
+}
+/*# sourceMappingURL=main.css.map */
