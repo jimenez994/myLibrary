@@ -47,6 +47,7 @@ $white: rgb(226, 226, 226);
       height: 3px;
       background-color: $white;
       margin: 5px;
+      transition: all 0.3s ease;
     }
   }
 }
@@ -69,16 +70,16 @@ $white: rgb(226, 226, 226);
 @media screen and (max-width: 768px) {
   .navSky {
     .nav-links {
-      position: absolute;
+      position: fixed;
       right: 0px;
       height: 92vh;
       top: 8vh;
       background-color: $backColor;
       flex-direction: column;
       align-items: center;
-      // width: 0;
-      // width: 50%;
-      // display: none;
+      width: 0;
+      transition: all 0.5s;
+
       li {
         opacity: 0;
       }
@@ -86,36 +87,36 @@ $white: rgb(226, 226, 226);
     .burger {
       display: block;
       cursor: pointer;
+      color: $white;
     }
   }
-}
-@keyframes inRight {
-  0% {
-    width: 0;
-  }
-  100% {
-    transform: rotate(0);
-    width: 50%;
-  }
-}
-@keyframes outRight{
-  0%{
-      transform: rotate(0);
+  .navSky {
+    .nav-active {
+      transition: width 1.5s;
       width: 50%;
-      }
-  100%{
-      transform: rotate(0);
-      width: 0%;
-      }
-}
-.navSky {
-  .nav-active {
-    animation: inRight 0.5s forwards 0s ease-in;
-    display: flex;
+      display: flex;
+    }
   }
-  .nav-inactive {
-    animation: outRight 0.5s forwards 0s ease-out;
-    display: none;
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    } to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px , 6px);
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px , -6px);
   }
 }
+
 
