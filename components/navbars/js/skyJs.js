@@ -1,3 +1,4 @@
+// import $ from "./../../../node_modules/jquery";
 const navSlide = () => {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav-links');
@@ -20,28 +21,53 @@ const navSlide = () => {
     // burger animation 
     burger.classList.toggle('toggle')
   })
-  // console.log(navLinks[1]);
 
-  window.addEventListener("scroll", () => {
-    console.log("sick");
-    var scrollPos = document.scrollTop;
-  // console.log(scrollPos);
-  var elmnt = document.getElementById("about");
-  var x = elmnt.scrollLeft;
-  var y = elmnt.scrollTop;
-  document.getElementById ("demo").innerHTML = "Horizontally: " + x + "px<br>Vertically: " + y + "px";
-  console.log('start' + x , y);
-  navLinks.forEach((link, index) => {
-    var refElement = link.querySelector('a');
-    console.log(refElement.getBoundingClientRect().top + window.scrollY);
-    
-    
-    // console.log('end');
-  })
-  });
-
-
+  // $(document).on('scroll', onScroll);
 }
+
+$(document).ready(function () {
+  $(document).on("scroll", onScroll);
+  
+  //smoothscroll
+  $('a[href^="#"]').on('click', function (e) {
+      e.preventDefault();
+      $(document).off("scroll");
+      
+      $('a').each(function () {
+          $(this).removeClass('active');
+      })
+      $(this).addClass('active');
+    
+      var target = this.hash,
+          menu = target;
+      $target = $(target);
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top+2
+      }, 500, 'swing', function () {
+          window.location.hash = target;
+          $(document).on("scroll", onScroll);
+      });
+  });
+});
+
+function onScroll(event){
+  var scrollPos = $(document).scrollTop();
+  const navLinks = $('.navSky a')  
+  navLinks.each(function () {
+    var currLink = $(this);
+    var refElement = $(currLink.attr("href"));
+    if (refElement.position()) {
+      if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+          navLinks.removeClass("active");
+          currLink.addClass("active");
+      }
+      else{
+          currLink.removeClass("active");
+      }
+    }
+  });
+}
+
 
 
 
