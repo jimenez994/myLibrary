@@ -11,10 +11,10 @@ const navSlide = () => {
     // animation links
     navLinks.forEach((link, index) => {
       if (link.style.animation) {
-        document.body.style.overflow = 'auto';
+        // document.body.style.overflow = 'auto';
         link.style.animation = '';
       } else {
-        document.body.style.overflow = 'hidden';
+        // document.body.style.overflow = 'hidden';
         link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + .3}s`
       }
     })

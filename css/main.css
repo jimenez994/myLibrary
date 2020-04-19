@@ -140,6 +140,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: -webkit-sticky;
+  position: sticky;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 30%;
@@ -151,6 +153,14 @@
   letter-spacing: 3px;
   font-weight: bold;
   font-size: 17px;
+}
+
+.navSky .nav-links .active {
+  border-bottom: 2px solid;
+}
+
+.navSky .nav-links a:hover {
+  border-bottom: 2px solid;
 }
 
 .navSky .nav-links li {
