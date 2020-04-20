@@ -9,13 +9,17 @@
 $backColor: #5d4954;
 $white: rgb(226, 226, 226);
 
-.navSky {
+#navSky {
+  position: fixed;
+  width: 100%;
+  top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
   font-family: "Poppins", sans-serif;
   background-color: $backColor;
+  transition: top 0.3s;
 
   .logo {
     color: $white;
@@ -25,7 +29,6 @@ $white: rgb(226, 226, 226);
   }
   .nav-links {
     display: flex;
-    position: sticky;
     justify-content: space-around;
     width: 30%;
 
@@ -61,15 +64,20 @@ $white: rgb(226, 226, 226);
   }
 }
 
+main {
+  padding-top: 8vh;
+}
+
+
 @media screen and (max-width: 1224px) {
-  .navSky {
+  #navSky {
     .nav-links {
       width: 42%;
     }
   }
 }
 @media screen and (max-width: 1024px) {
-  .navSky {
+  #navSky {
     .nav-links {
       width: 50%;
     }
@@ -77,7 +85,7 @@ $white: rgb(226, 226, 226);
 }
 
 @media screen and (max-width: 768px) {
-  .navSky {
+  #navSky {
     .nav-links {
       position: fixed;
       right: 0px;
@@ -99,7 +107,7 @@ $white: rgb(226, 226, 226);
       color: $white;
     }
   }
-  .navSky {
+  #navSky {
     .nav-active {
       transition: width 1.5s;
       width: 50%;

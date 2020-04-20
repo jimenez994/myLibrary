@@ -21,8 +21,6 @@ const navSlide = () => {
     // burger animation 
     burger.classList.toggle('toggle')
   })
-
-  // $(document).on('scroll', onScroll);
 }
 
 $(document).ready(function () {
@@ -50,9 +48,10 @@ $(document).ready(function () {
   });
 });
 
-function onScroll(event){
+function onScroll(event) {
+  // nav line active scroll
   var scrollPos = $(document).scrollTop();
-  const navLinks = $('.navSky a')  
+  const navLinks = $('#navSky a')  
   navLinks.each(function () {
     var currLink = $(this);
     var refElement = $(currLink.attr("href"));
@@ -68,12 +67,30 @@ function onScroll(event){
   });
 }
 
+const navScrollHide = () => {
+  var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+
+  this.document.querySelector('.nav-links').classList.remove('nav-active');
+  // this.document.querySelector()
+
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navSky").style.top = "0";
+  } else {
+    document.getElementById("navSky").style.top = "-8vh";
+  }
+  prevScrollpos = currentScrollPos;
+}
+}
+
+
 
 
 
 const app = () => {
   navSlide();
-
+  navScrollHide();
 }
 
 app();
