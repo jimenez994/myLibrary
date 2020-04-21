@@ -1,2 +1,8 @@
-@import '../components/navbars/scss/goldDark';
-@import '../components/navbars/scss/sky';
+@import '../components/navbars/sky/scss/sky';
+@import '../components/navbars/oficial_V1/scss/goldDark';
+
+
+a {
+  text-decoration: none;
+  color: burlywood;
+}
