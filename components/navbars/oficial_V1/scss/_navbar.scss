@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+$backColor: #5d4954;
+$white: rgb(226, 226, 226);
+
+#navSky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  font-family: "Poppins", sans-serif;
+  background-color: $backColor;
+  transition: top 0.3s;
+
+  .logo {
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 24px;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+
+    a {
+      color: $white;
+      text-decoration: none;
+      letter-spacing: 3px;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .active {
+      border-bottom: 2px solid;
+    }
+
+    a:hover {
+      border-bottom: 2px solid;
+    }
+
+    li {
+      list-style: none;
+    }
+  }
+  .burger {
+    display: none;
+    div {
+      width: 25px;
+      height: 3px;
+      background-color: $white;
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+main {
+  padding-top: 8vh;
+}
+
+
+@media screen and (max-width: 1224px) {
+  #navSky {
+    .nav-links {
+      width: 42%;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  #navSky {
+    .nav-links {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #navSky {
+    .nav-links {
+      position: fixed;
+      right: 0px;
+      height: 92vh;
+      top: 8vh;
+      background-color: $backColor;
+      flex-direction: column;
+      align-items: center;
+      width: 0;
+      transition: all 0.5s;
+
+      li {
+        opacity: 0;
+      }
+    }
+    .burger {
+      display: block;
+      cursor: pointer;
+      color: $white;
+    }
+  }
+  #navSky {
+    .nav-active {
+      transition: width 1.5s;
+      width: 50%;
+      display: flex;
+    }
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    } to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px , 6px);
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px , -6px);
+  }
+}
+
+
