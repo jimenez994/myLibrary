@@ -4,19 +4,24 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  // border: black 1px solid;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 $backColor: #5d4954;
 $white: rgb(226, 226, 226);
 
-#navSky {
+.navbar {
   position: fixed;
   width: 100%;
   top: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
+  height: 48px;
   font-family: "Poppins", sans-serif;
   background-color: $backColor;
   transition: top 0.3s;
@@ -64,20 +69,19 @@ $white: rgb(226, 226, 226);
   }
 }
 
-main {
-  padding-top: 8vh;
+section {
+  padding: 2rem;
 }
 
-
 @media screen and (max-width: 1224px) {
-  #navSky {
+  .navbar {
     .nav-links {
       width: 42%;
     }
   }
 }
 @media screen and (max-width: 1024px) {
-  #navSky {
+  .navbar {
     .nav-links {
       width: 50%;
     }
@@ -85,7 +89,8 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-  #navSky {
+  .navbar {
+    min-height: 8vh;
     .nav-links {
       position: fixed;
       right: 0px;
@@ -106,8 +111,6 @@ main {
       cursor: pointer;
       color: $white;
     }
-  }
-  #navSky {
     .nav-active {
       transition: width 1.5s;
       width: 50%;

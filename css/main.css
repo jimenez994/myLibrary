@@ -169,7 +169,11 @@ main {
           box-sizing: border-box;
 }
 
-#navSky {
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
   position: fixed;
   width: 100%;
   top: 0;
@@ -181,21 +185,21 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 8vh;
+  height: 48px;
   font-family: "Poppins", sans-serif;
   background-color: #5d4954;
   -webkit-transition: top 0.3s;
   transition: top 0.3s;
 }
 
-#navSky .logo {
+.navbar .logo {
   color: #e2e2e2;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 24px;
 }
 
-#navSky .nav-links {
+.navbar .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,7 +208,7 @@ main {
   width: 30%;
 }
 
-#navSky .nav-links a {
+.navbar .nav-links a {
   color: #e2e2e2;
   text-decoration: none;
   letter-spacing: 3px;
@@ -212,23 +216,23 @@ main {
   font-size: 17px;
 }
 
-#navSky .nav-links .active {
+.navbar .nav-links .active {
   border-bottom: 2px solid;
 }
 
-#navSky .nav-links a:hover {
+.navbar .nav-links a:hover {
   border-bottom: 2px solid;
 }
 
-#navSky .nav-links li {
+.navbar .nav-links li {
   list-style: none;
 }
 
-#navSky .burger {
+.navbar .burger {
   display: none;
 }
 
-#navSky .burger div {
+.navbar .burger div {
   width: 25px;
   height: 3px;
   background-color: #e2e2e2;
@@ -237,24 +241,27 @@ main {
   transition: all 0.3s ease;
 }
 
-main {
-  padding-top: 8vh;
+section {
+  padding: 2rem;
 }
 
 @media screen and (max-width: 1224px) {
-  #navSky .nav-links {
+  .navbar .nav-links {
     width: 42%;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  #navSky .nav-links {
+  .navbar .nav-links {
     width: 50%;
   }
 }
 
 @media screen and (max-width: 768px) {
-  #navSky .nav-links {
+  .navbar {
+    min-height: 8vh;
+  }
+  .navbar .nav-links {
     position: fixed;
     right: 0px;
     height: 92vh;
@@ -271,15 +278,15 @@ main {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
   }
-  #navSky .nav-links li {
+  .navbar .nav-links li {
     opacity: 0;
   }
-  #navSky .burger {
+  .navbar .burger {
     display: block;
     cursor: pointer;
     color: #e2e2e2;
   }
-  #navSky .nav-active {
+  .navbar .nav-active {
     -webkit-transition: width 1.5s;
     transition: width 1.5s;
     width: 50%;
